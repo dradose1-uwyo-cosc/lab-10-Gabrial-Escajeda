@@ -10,30 +10,6 @@
 
 #import modules you will need 
 
-from hashlib import sha256 
-from pathlib import Path
-
-def get_hash(to_hash):
-    """You can use """
-    return sha256(to_hash.encode('utf-8')).hexdigest().upper()
-
-path = Path('rockyou.txt')
-path2 = Path('hash')
-
-try:
-    for line in path.read_text():
-        pairs = line.split("\t")
-        for item in line:
-            hash(item)
-
-
-except:
-    if hash(item) == path2.read_text():
-        print(f"{item} is the password")
-        
-
-
-
 # Files and Exceptions
 
 # For this assignment, you will be writing a program to "crack" a password. You will need to open the file `hash` as this is the password you are trying to "crack."
@@ -60,3 +36,28 @@ except:
 # Hash each individual password and compare it against the stored hash.
 # - When you find the match, print the plaintext version of the password.
 # - End your loop.
+
+from hashlib import sha256 
+from pathlib import Path
+
+def get_hash(to_hash):
+    """You can use """
+    return sha256(to_hash.encode('utf-8')).hexdigest().upper()
+
+hehe = Path('rockyou.txt')
+haha = Path('hash')
+
+Storage = haha.read_text().strip()
+
+try:
+    with hehe.open() as file:
+        for line in file:
+            silly = get_hash(line.strip())
+            if silly == Storage:
+                print(f"{line.strip()} is the password")
+
+
+except FileNotFoundError:
+    print("Wops")
+
+
